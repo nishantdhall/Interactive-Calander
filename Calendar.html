@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calander</title>
+    <link rel="shortcut icon"  type="image/x-icon" href="images/iconcalendar.png" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="CL.css">
+     <script src="CL.js" defer></script>  
+</head>
+<body>
+     <div class="calander">
+            <div class="in_box">
+                
+                <div class="Cheader">
+                    <span id="todaydt">DATE</span>
+                    <br />
+                </div>
+                
+                <div class="view-mode-buttons">
+                    <button class="view-btn active" id="monthView" onclick="switchView('month')">Month</button>
+                    <button class="view-btn" id="weekView" onclick="switchView('week')">Week</button>
+                    <button class="view-btn" id="yearView" onclick="switchView('year')">Year</button>
+                </div>
+                
+                <div class="PrvBtn" title="Previous" onclick="PrevMNTcalendar();">
+                    <span><i class="fas fa-chevron-left"></i></span>
+                </div>
+                
+                <div class="NxtBtn" title="Next" onclick="NxtMNTcalendar();">
+                    <span><i class="fas fa-chevron-right"></i></span>
+                </div>
+                
+                <div id="week" class="week" style="cursor: pointer;">
+                    <span title="Sunday">Su</span>
+                    <span title="Monday">Mo</span>
+                    <span title="Tuesday">Tu</span>
+                    <span title="Wednesday">We</span>
+                    <span title="Thursday">Th</span>
+                    <span title="Friday">Fr</span>
+                    <span title="Saturday">Sa</span>
+                </div>
+
+                <div id="strdata" class="card"></div>
+
+            </div>
+        </div>
+        <input type="hidden" id="HDNNxtDATE" />
+
+        <!-- Event Modal -->
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Event</h2>
+                <form id="eventForm">
+                    <input type="text" id="eventTitle" placeholder="Event Title" required>
+                    <textarea id="eventDescription" placeholder="Event Description"></textarea>
+                    <button type="submit">Save Event</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Notification Popup -->
+        <div id="notification" class="notification"></div>
+</body>
+</html>
